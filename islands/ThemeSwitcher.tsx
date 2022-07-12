@@ -45,9 +45,8 @@ export default function ThemeSwitcher() {
       <div class={tw`inline-flex flex-row`}>
         <label
           for="theme-toggler"
-          class={tw
-            `
-              flex items-center justify-between cursor-pointer w-12 h-8 bg-gray-100
+          class={tw`
+              flex items-center justify-between cursor-pointer w-12 h-7 bg-gray-100
               rounded-full relative transition-bg ring ring-gray-300
             `}
         >
@@ -63,15 +62,24 @@ export default function ThemeSwitcher() {
             class={tw`
               absolute w-6 h-6 rounded-full transition bg-gray-200 active:w-6
               ${css({
-                '.peer:checked + &': apply`right-1 bg-gray-800`,
-                '.peer:not(:checked) + &': apply`left-1`,
-                '.peer:not(:checked) + &:before':{content: '"☀️"', position: 'absolute', left: '4px'},
-                '.peer:checked + &:before': {content: '"🌙"', position: 'absolute', left: '4px'},
+                ".peer:checked + &": apply`right-1 bg-gray-800`,
+                ".peer:not(:checked) + &": apply`left-1`,
+                ".peer:not(:checked) + &:before": {
+                  content: '"☀️"',
+                  position: "absolute",
+                  left: "4px",
+                  width: "4px",
+                },
+                ".peer:checked + &:before": {
+                  display: "block",
+                  content: '"🌙"',
+                  position: "absolute",
+                  left: "4px",
+                  width: "4px",
+                },
               })}
             `}
-          >
-
-          </span>
+          ></span>
         </label>
       </div>
     </Fragment>
