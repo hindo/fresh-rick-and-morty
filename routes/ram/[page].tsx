@@ -1,11 +1,12 @@
 /** @jsx h */
-import { h, Fragment } from "preact";
+import { Fragment, h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Head, asset } from "$fresh/runtime.ts";
+import { Head } from "$fresh/runtime.ts";
 
 import Pagination from "../../components/pagination.tsx";
 import ThemeSwitcher from "../../islands/ThemeSwitcher.tsx";
+import CharacterCard from "../../islands/CharacterCard.tsx";
 
 import { CharactersResponse } from "../../types/Character.ts";
 
@@ -47,20 +48,7 @@ export default function Page({ data, params }: PageProps<CharactersResponse>) {
             <div class={tw`flex flex-col items-center`}>
               <div class={tw`grid grid-cols-5 gap-4 mb-5`}>
                 {data.results.map((character) => (
-                  <div
-                  class={tw`border rounded-lg overflow-hidden border-gray-300
-                  bg-gray-200 dark:bg-gray-800 hover:bg-gray-300
-                  dark:border-gray-700 dark:hover:bg-gray-700`}
-                >
-                  <img
-                    class={tw`mb-3`}
-                    title={character.name}
-                    src={asset(character.image)}
-                  />
-                  <div class={tw`mb-3 px-2`}>
-                    <span class={tw`text-xl`}>{character.name}</span>
-                  </div>
-                </div>
+                  <CharacterCard character={character} />
                 ))}
               </div>
               <Pagination
