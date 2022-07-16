@@ -4,7 +4,7 @@ import { Fragment, h } from "preact";
 import { useState } from "preact/hooks";
 import { apply, css, tw } from "@twind";
 
-import { Character } from "../types/Character.ts";
+import { Character } from "../src/types/Character.ts";
 
 type CharacterCardProps = {
   character: Character;

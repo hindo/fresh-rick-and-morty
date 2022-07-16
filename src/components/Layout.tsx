@@ -3,7 +3,7 @@ import { Fragment, h, ComponentChildren } from "preact";
 import { tw } from "@twind";
 import { Head } from "$fresh/runtime.ts";
 
-import ThemeSwitcher from "../islands/ThemeSwitcher.tsx";
+import ThemeSwitcher from "../../islands/ThemeSwitcher.tsx";
 
 type LayoutProps = {
   children: ComponentChildren;

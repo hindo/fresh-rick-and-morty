@@ -7,7 +7,7 @@ import Layout from "../../src/components/Layout.tsx";
 import Pagination from "../../src/components/Pagination.tsx";
 import CharacterCard from "../../islands/CharacterCard.tsx";
 
-import { CharactersResponse } from "../../types/Character.ts";
+import { CharactersResponse } from "../../src/types/Character.ts";
 
 const URL = "https://rickandmortyapi.com/api/character/";
 

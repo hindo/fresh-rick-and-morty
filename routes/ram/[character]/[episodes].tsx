@@ -3,13 +3,13 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import Layout from "../../../components/Layout.tsx";
-import EpisodeCard from "../../../components/EpisodeCard.tsx";
+import Layout from "../../../src/components/Layout.tsx";
+import EpisodeCard from "../../../src/components/EpisodeCard.tsx";
 
 import BackButton from '../../../islands/BackButton.tsx';
 
-import { Character } from "../../../types/Character.ts";
-import { Episode } from "../../../types/Episode.ts";
+import { Character } from "../../../src/types/Character.ts";
+import { Episode } from "../../../src/types/Episode.ts";
 
 const CHARACTER_URL = "https://rickandmortyapi.com/api/character/";
 const EPISODE_URL = "https://rickandmortyapi.com/api/episode/";
