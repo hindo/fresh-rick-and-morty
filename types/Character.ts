@@ -1,3 +1,5 @@
+import { Response } from './generic.ts'
+
 export type Character = {
   id: number;
   name: string;
@@ -19,12 +21,4 @@ export type Character = {
   created: Date;
 };
 
-export type CharactersResponse = {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-  };
-  results: Character[];
-};
+export type CharactersResponse = Response<Character>;

@@ -1,11 +1,10 @@
 /** @jsx h */
-import { Fragment, h } from "preact";
+import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
-import { Head } from "$fresh/runtime.ts";
 
-import Pagination from "../../components/pagination.tsx";
-import ThemeSwitcher from "../../islands/ThemeSwitcher.tsx";
+import Layout from "../../components/Layout.tsx";
+import Pagination from "../../components/Pagination.tsx";
 import CharacterCard from "../../islands/CharacterCard.tsx";
 
 import { CharactersResponse } from "../../types/Character.ts";
@@ -26,40 +25,21 @@ export const handler: Handlers<CharactersResponse | null> = {
 
 export default function Page({ data, params }: PageProps<CharactersResponse>) {
   return (
-    <Fragment>
-      <Head>
-        <title>Rick and Morty Characters</title>
-      </Head>
-      <main
-        class={tw`h-screen overflow-auto bg-gray-200 text-gray-800
-        dark:bg-gray-800 dark:text-gray-200`}
-      >
-        <div
-          class={tw`
-            sticky top-0 bg-gray-200 mb-5 px-3 py-5 flex items-center justify-between border-b border-gray-400 shadow-md
-            dark:bg-gray-800 dark:border-gray-600
-          `}
-        >
-          <div class={tw`text-3xl`}>Rick and Morty Characters</div>
-          <ThemeSwitcher />
-        </div>
-        <div class={tw`flex justify-center`}>
-          <div class={tw`w-2/3`}>
-            <div class={tw`flex flex-col items-center`}>
-              <div class={tw`grid grid-cols-5 gap-4 mb-5`}>
-                {data.results.map((character) => (
-                  <CharacterCard character={character} />
-                ))}
-              </div>
-              <Pagination
-                classNames={tw`mb-5`}
-                currentPage={parseInt(params.page)}
-                totalPages={data.info.pages}
-              />
-            </div>
+    <Layout>
+      <div class={tw`flex flex-col items-center justify-center`}>
+        <div class={tw`w-10/12`}>
+          <div class={tw`grid grid-cols-4 gap-4 mb-5`}>
+            {data.results.map((character) => (
+              <CharacterCard character={character} />
+            ))}
           </div>
         </div>
-      </main>
-    </Fragment>
+        <Pagination
+          classNames={tw`mb-5`}
+          currentPage={parseInt(params.page)}
+          totalPages={data.info.pages}
+        />
+      </div>
+    </Layout>
   );
 }

@@ -3,18 +3,22 @@
 // This file is automatically updated during development when running `dev.ts`.
 
 import * as $0 from "./routes/index.tsx";
-import * as $1 from "./routes/ram/[page].tsx";
-import * as $$0 from "./islands/CharacterCard.tsx";
-import * as $$1 from "./islands/ThemeSwitcher.tsx";
+import * as $1 from "./routes/ram/[character]/[episodes].tsx";
+import * as $2 from "./routes/ram/[page].tsx";
+import * as $$0 from "./islands/BackButton.tsx";
+import * as $$1 from "./islands/CharacterCard.tsx";
+import * as $$2 from "./islands/ThemeSwitcher.tsx";
 
 const manifest = {
   routes: {
     "./routes/index.tsx": $0,
-    "./routes/ram/[page].tsx": $1,
+    "./routes/ram/[character]/[episodes].tsx": $1,
+    "./routes/ram/[page].tsx": $2,
   },
   islands: {
-    "./islands/CharacterCard.tsx": $$0,
-    "./islands/ThemeSwitcher.tsx": $$1,
+    "./islands/BackButton.tsx": $$0,
+    "./islands/CharacterCard.tsx": $$1,
+    "./islands/ThemeSwitcher.tsx": $$2,
   },
   baseUrl: import.meta.url,
 };
