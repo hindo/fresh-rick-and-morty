@@ -3,8 +3,8 @@ import { h } from "preact";
 import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-import Layout from "../../components/Layout.tsx";
-import Pagination from "../../components/Pagination.tsx";
+import Layout from "../../src/components/Layout.tsx";
+import Pagination from "../../src/components/Pagination.tsx";
 import CharacterCard from "../../islands/CharacterCard.tsx";
 
 import { CharactersResponse } from "../../types/Character.ts";
