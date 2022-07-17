@@ -39,7 +39,7 @@ export default function Episodes(
   const [character, episodes] = data;
   return (
     <Layout>
-      <div class={tw`m-auto w-2/3`}>
+        <div class={tw`m-auto w-10/12`}>
         <BackButton />
         <div class={tw`flex flex-col items-center mb-5`}>
           <img
@@ -58,7 +58,7 @@ export default function Episodes(
             </div>
           )
           : <EpisodeCard episode={episodes} />}
-      </div>
+        </div>
     </Layout>
   );
 }
