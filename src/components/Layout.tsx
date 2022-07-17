@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
     >
       <Header />
       <main
-        class={tw`overflow-auto`}
+        class={tw`overflow-auto mb-10`}
       >
         <div class={tw``}>
           {children}
